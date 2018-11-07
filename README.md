@@ -4,12 +4,9 @@ You can find somes bugs, feel free to report them, it helps me!
 
 There is no automatic update, don't forget to check if there is a newer version sometimes ;)
 # Features
-##### Actual Features
 - [x] List all existing skins
 - [x] List your inventory
 - [x] List skins you don't own
-<br>
-##### Planned Features
 - [ ] List all existing graffitis
 - [ ] List all existing stickers
 - [ ] Check manually for app update
@@ -21,7 +18,7 @@ There is no automatic update, don't forget to check if there is a newer version 
 # Installation
 - Download and install NodeJS
 - Download the complete CSGO Invy repository
-- Launch a terminal (CMD, iTerm, ...)
+- Launch a terminal (CMD, iTerm, Hyper ...)
 - Move to CSGO Invy folder :
 ```sh
 $ cd Downloads
