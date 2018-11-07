@@ -15,7 +15,7 @@ There is no automatic update, don't forget to check if there is a newer version 
 | Release Date | Version |
 | ------ | ------ |
 | 07/11/2018 | 1.0 |
-# Installation
+# Installation / How to use
 - Download and install NodeJS
 - Download the complete CSGO Invy repository as ZIP and extract it
 - Launch a terminal (CMD, iTerm, Hyper ...)
