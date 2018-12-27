@@ -1,0 +1,19 @@
+html {
+  background: #1F1F1F
+}
+
+#wScrollBar::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+#wScrollBar::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#wScrollBar::-webkit-scrollbar-thumb
+{
+	background-color: #0ae;
+}

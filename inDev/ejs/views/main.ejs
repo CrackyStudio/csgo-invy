@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CSGO Invy</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <link rel="icon" href="CS-icon.png">
+        <script src="main.js"></script>
+        <style>
+            html, body { border: 0; font-family: "Arial" }
+            body { background-color: black; color : white }
+            div { width: 50%; margin: 0 auto; text-align: center }
+            hr { width: 50% }
+            input { text-align: center }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>CS:GO Invy</h1>
+            <hr>
+            <br>
+            <form action="/myInventory" method="POST">
+                <input type="text" name="steamAccountUrl" placeholder="Steam Account URL" />
+                <br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div> 
+    </body>
+</html>
