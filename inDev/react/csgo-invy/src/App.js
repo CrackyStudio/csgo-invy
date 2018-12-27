@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router } from "react-router-dom";
-import { Pane, Tablist, SidebarTab, Button } from "evergreen-ui";
+import { Pane, Tablist, SidebarTab, Button, TextInput, toaster, Spinner } from "evergreen-ui";
 import logo from './logo.gif'
 import skinsList from './skinsList.json'
 import Component from "@reactions/component";
@@ -13,18 +13,35 @@ let weaponList = ["AK-47", "AUG", "AWP", "Bayonet", "Bowie Knife", "Butterfly Kn
 "R8 Revolver", "Sawed-Off", "SCAR-20", "SG 553", "Shadow Daggers", "SSG 08", "Tec-9", "UMP-45", "USP-S", "XM1014"];
 
 class App extends Component {
-  getJSON = async (response) => {
-    response = await fetch(`https://cors-anywhere.herokuapp.com/https://steamcommunity.com/id/crackystudio/inventory/json/730/2`, {
-    headers: {
-        "Content-Type": "application/json",
-      },
-      method: "GET",
-    })
-    .catch(function(error) {
-      console.log(error.message);
+  constructor(props) {
+    super(props);
+    this.state = ({
+      currentInput: ''
     });
-    const json = await response.json();
-    this.getInventory(json)
+  }
+
+  getJSON = async (response) => {
+    if (this.state.currentInput != '') {
+      response = await fetch(`https://cors-anywhere.herokuapp.com/${this.state.currentInput}/inventory/json/730/2`, {
+        headers: {
+            "Content-Type": "application/json",
+          },
+          method: "GET",
+        })
+        if (response.ok) {
+          toaster.notify('Loading, please wait')
+          const json = await response.json();
+          if (json.success == false) {
+            toaster.danger('Your profile and inventory must be public')
+          } else {
+            this.getInventory(json)
+          }
+        } else {
+          toaster.danger('Invalid URL')
+        }
+    } else {
+      toaster.danger('Invalid URL')
+    }
   };
 
   getInventory(json) {
@@ -56,6 +73,7 @@ class App extends Component {
     weaponList.forEach(function(weapon) {
       this.getMissingWeaponSkins(missingSkinsArray, weapon)
     }, this);  
+    toaster.success('Done! You can navigate through tabs')
   }
 
   getMissingWeaponSkins(missingSkinsArray, weapon) {
@@ -86,14 +104,25 @@ class App extends Component {
     return (
       <Router>
         <>
-          <Pane display="flex" background="#171A21" borderRadius={3} height={"10vh"} alignItems="center" onClick={this.getJSON}>
+          <Pane display="flex" background="#171A21" borderRadius={3} height={"10vh"} alignItems="center">
             <Pane paddingLeft={12} flex={1} alignItems="center" display="flex">
               <img src={logo} alt="Logo" width={100}/>
             </Pane>
-            <Button background="#5F7B1F" color="white" marginRight={16}>Get Inventory</Button>
+            <Component initialState={{ value: ''}}>
+              <TextInput
+                id="mainInput"
+                marginRight={16}
+                width={350}
+                placeholder="Insert Steam URL here"
+                onChange={e => this.setState({ currentInput: e.target.value })}
+                value={this.state.currentInput}
+              />
+            }
+            </Component>
+            <Button id="mainBut" background="#5F7B1F" color="white" marginRight={16} onClick={this.getJSON}>Get Inventory</Button>
           </Pane>
 
-          <Component
+          <Component 
             initialState={{
               selectedIndex: 0,
               tabs: weaponList
@@ -114,7 +143,7 @@ class App extends Component {
                     </SidebarTab>
                   ))}
                 </Tablist>
-                <Pane padding={16} background="#1B2936" color="white" flex="1">
+                <Pane id="wScrollBar" overflowY="auto" minHeight={450} padding={16} background="#1B2936" color="white" flex="1">
                   {state.tabs.map((tab, index) => (
                     <Pane
                       key={tab}
@@ -124,11 +153,14 @@ class App extends Component {
                       aria-hidden={index !== state.selectedIndex}
                       display={index === state.selectedIndex ? 'block' : 'none'}
                     >
-                    {
+                    { 
                       weaponList.map((weapon) => (
                         index === state.selectedIndex && tab === weapon && ( 
                           <>
+                            {weapon} you still don't own:
+                            <br/><br/>
                             {this.buildList(weapon)}
+                            <br/><br/>
                           </>
                         )
                       ))

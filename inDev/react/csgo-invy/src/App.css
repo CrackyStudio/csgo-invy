@@ -1,5 +1,6 @@
 html {
-  background: #1F1F1F
+	background: #1F1F1F;
+	overflow: hidden;
 }
 
 #wScrollBar::-webkit-scrollbar-track
@@ -16,4 +17,18 @@ html {
 #wScrollBar::-webkit-scrollbar-thumb
 {
 	background-color: #0ae;
+}
+
+#mainBut:hover {
+	color: black;
+	background: #0ae;
+}
+
+#mainInput {
+	background: #5F6971;
+	color: white;
+}
+
+#mainInput::placeholder {
+	color: white;
 }
