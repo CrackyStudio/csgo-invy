@@ -6,8 +6,8 @@ import logo from './logo.gif'
 import skinsList from './skinsList.json'
 import Component from "@reactions/component";
 
-let missingWeaponSkinsArray = missingWeaponSkinsArray || [];
-let weaponList = ["AK-47", "AUG", "AWP", "Bayonet", "Bowie Knife", "Butterfly Knife", "CZ75-Auto", "Desert Eagle", "Dual Berettas", 
+let missingWeaponSkinsArray = [];
+let weaponList = ["AK-47", "AUG", "AWP", "Bayonet", "Bowie Knife", "Butterfly Knife", "CZ75-Auto", "Desert Eagle", "Dual Barettas", 
 "Falchion Knife", "FAMAS", "Five-SeveN", "Flip Knife", "G3SG1", "Galil AR", "Glock-18", "Gut Knife", "Huntsman Knife", "Karambit", 
 "M249", "M4A1-S", "M4A4", "M9 Bayonet", "MAC-10", "MAG-7", "MP7", "MP9", "Negev", "Nova", "P2000", "P250", "P90", "PP-Bizon", 
 "R8 Revolver", "Sawed-Off", "SCAR-20", "SG 553", "Shadow Daggers", "SSG 08", "Tec-9", "UMP-45", "USP-S", "XM1014"];
@@ -65,16 +65,19 @@ class App extends Component {
       }
     }
   }
-
+  
   buildList(weapon) {  
-    let weaponList = []
+    let skinsList = []
+    let reg = new RegExp(`^${weapon}`, "g");
     missingWeaponSkinsArray.map(function(e) {   
-      if (e.indexOf(weapon) > -1) {
-        weaponList.push(e.replace(new RegExp(`${weapon} \\| `, "g"), ""))
+      if (e.search(reg) > -1) {
+        let tempToAdd = e.replace(new RegExp(`${weapon} \\| `, "g"), "");
+        if (skinsList.includes(tempToAdd) == false) {
+          skinsList.push(tempToAdd)
+        }
       }   
     })
-    console.log(weaponList) 
-    return weaponList.map(function(weapon) {
+    return skinsList.map(function(weapon) {
       return <li>{weapon}</li>
     })     
   }
@@ -122,26 +125,14 @@ class App extends Component {
                       display={index === state.selectedIndex ? 'block' : 'none'}
                     >
                     {
-                      index === state.selectedIndex && tab === "AK-47" && ( 
-                        <>
-                          {this.buildList("AK-47")}
-                        </>
-                      )
-                    }    
-                    {
-                      index === state.selectedIndex && tab === "AUG" && ( 
-                        <>
-                          {this.buildList("AUG")}
-                        </>
-                      )
-                    }    
-                    {
-                      index === state.selectedIndex && tab === "AWP" && (  
-                        <>
-                          {this.buildList("AWP")}
-                        </>
-                      )
-                    }           
+                      weaponList.map((weapon) => (
+                        index === state.selectedIndex && tab === weapon && ( 
+                          <>
+                            {this.buildList(weapon)}
+                          </>
+                        )
+                      ))
+                    }
                     </Pane>
                   ))}
                 </Pane>
