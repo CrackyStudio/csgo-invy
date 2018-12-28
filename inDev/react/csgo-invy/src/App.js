@@ -143,7 +143,7 @@ class App extends Component {
                     </SidebarTab>
                   ))}
                 </Tablist>
-                <Pane id="wScrollBar" overflowY="auto" minHeight={450} padding={16} background="#1B2936" color="white" flex="1">
+                <Pane id="wScrollBar" overflowY="auto" minHeight={450} padding={16} paddingBottom={32} background="#1B2936" color="white" flex="1">
                   {state.tabs.map((tab, index) => (
                     <Pane
                       key={tab}
@@ -160,7 +160,7 @@ class App extends Component {
                             {weapon} you still don't own:
                             <br/><br/>
                             {this.buildList(weapon)}
-                            <br/><br/>
+                            <br/>
                           </>
                         )
                       ))
