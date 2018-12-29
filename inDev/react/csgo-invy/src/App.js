@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router } from "react-router-dom";
-import { Pane, Tablist, SidebarTab, Button, TextInput, toaster, Spinner } from "evergreen-ui";
+import { Pane, Tablist, SidebarTab, Button, TextInput, toaster } from "evergreen-ui";
 import logo from './logo.gif'
 import skinsList from './skinsList.json'
 import Component from "@reactions/component";
@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   getJSON = async (response) => {
-    if (this.state.currentInput != '') {
+    if (this.state.currentInput !== '') {
       response = await fetch(`https://cors-anywhere.herokuapp.com/${this.state.currentInput}/inventory/json/730/2`, {
         headers: {
             "Content-Type": "application/json",
@@ -31,7 +31,7 @@ class App extends Component {
         if (response.ok) {
           toaster.notify('Loading, please wait')
           const json = await response.json();
-          if (json.success == false) {
+          if (json.success === false) {
             toaster.danger('Your profile and inventory must be public')
           } else {
             this.getInventory(json)
@@ -48,17 +48,15 @@ class App extends Component {
     let myJSON = [];
     myJSON.push(json);
     let ownedItems = [];
-    for (let i of myJSON) {      
+    myJSON.forEach(() => {      
       myJSON.find((item) => {
         for (let items in item.rgDescriptions) {
-          for (let market_hash_name in item.rgDescriptions[items]) {
-            let vanillaName = item.rgDescriptions[items].market_hash_name
-            ownedItems.push(vanillaName.replace(/\s(\(Minimal Wear\))|\s(\(Field-Tested\))|\s(\(Battle-Scarred\))|\s(\(Well-Worn\))|\s(\(Factory New\))|StatTrak™\s|★\s/g, ''))
-            break;
-          }
+          let vanillaName = item.rgDescriptions[items].market_hash_name
+          ownedItems.push(vanillaName.replace(/\s(\(Minimal Wear\))|\s(\(Field-Tested\))|\s(\(Battle-Scarred\))|\s(\(Well-Worn\))|\s(\(Factory New\))|StatTrak™\s|★\s/g, ''))
         }
+        return ownedItems;
       })
-    }
+    })
     this.getMissingSkins(ownedItems)
   }
 
@@ -70,7 +68,7 @@ class App extends Component {
         missingSkinsArray.push(itemsListFile[i])
       }
     }
-    weaponList.forEach(function(weapon) {
+    weaponList.forEach((weapon) => {
       this.getMissingWeaponSkins(missingSkinsArray, weapon)
     }, this);  
     toaster.success('Done! You can navigate through tabs')
@@ -87,15 +85,16 @@ class App extends Component {
   buildList(weapon) {  
     let skinsList = []
     let reg = new RegExp(`^${weapon}`, "g");
-    missingWeaponSkinsArray.map(function(e) {   
+    missingWeaponSkinsArray.map((e) => {   
       if (e.search(reg) > -1) {
         let tempToAdd = e.replace(new RegExp(`${weapon} \\| `, "g"), "");
-        if (skinsList.includes(tempToAdd) == false) {
+        if (skinsList.includes(tempToAdd) === false) {
           skinsList.push(tempToAdd)
         }
-      }   
+      }  
+      return skinsList;
     })
-    return skinsList.map(function(weapon) {
+    return skinsList.map((weapon) => {
       return <li>{weapon}</li>
     })     
   }
