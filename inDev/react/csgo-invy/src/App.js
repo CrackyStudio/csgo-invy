@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router } from "react-router-dom";
-import { Pane, Tablist, SidebarTab, Button, TextInput, toaster } from "evergreen-ui";
+import { Pane, Tablist, SidebarTab, Button, TextInput, toaster, Position, Popover, Menu} from "evergreen-ui";
 import logo from './logo.gif'
 import skinsList from './skinsList.json'
 import Component from "@reactions/component";
 
 let missingWeaponSkinsArray = [];
-let weaponList = ["AK-47", "AUG", "AWP", "Bayonet", "Bowie Knife", "Butterfly Knife", "CZ75-Auto", "Desert Eagle", "Dual Barettas", 
+let weaponList = ["AK-47", "AUG", "AWP", "Bayonet", "Bowie Knife", "Butterfly Knife", "CZ75-Auto", "Desert Eagle", "Dual Berettas", 
 "Falchion Knife", "FAMAS", "Five-SeveN", "Flip Knife", "G3SG1", "Galil AR", "Glock-18", "Gut Knife", "Huntsman Knife", "Karambit", 
 "M249", "M4A1-S", "M4A4", "M9 Bayonet", "MAC-10", "MAG-7", "MP5-SD", "MP7", "MP9", "Negev", "Nova", "P2000", "P250", "P90", "PP-Bizon", 
 "R8 Revolver", "Sawed-Off", "SCAR-20", "SG 553", "Shadow Daggers", "SSG 08", "Tec-9", "UMP-45", "USP-S", "XM1014"];
@@ -83,19 +83,84 @@ class App extends Component {
   }
   
   buildList(weapon) {  
-    let skinsList = []
+    let skinsList = [];
+    let buyLink = [];
+    let index = -1;
     let reg = new RegExp(`^${weapon}`, "g");
     missingWeaponSkinsArray.map((e) => {   
       if (e.search(reg) > -1) {
         let tempToAdd = e.replace(new RegExp(`${weapon} \\| `, "g"), "");
         if (skinsList.includes(tempToAdd) === false) {
           skinsList.push(tempToAdd)
+          // Buy link for knife to add (tag_weapon_elite pour les berettas)
+          buyLink.push({
+            fieldTested: `https://steamcommunity.com/market/listings/730/${weapon}%20%7C%20${encodeURIComponent(tempToAdd)}%20%28Field-Tested%29`,
+            minimalWear: `https://steamcommunity.com/market/listings/730/${weapon}%20%7C%20${encodeURIComponent(tempToAdd)}%20%28Minimal%20Wear%29`,
+            battleScarred: `https://steamcommunity.com/market/listings/730/${weapon}%20%7C%20${encodeURIComponent(tempToAdd)}%20%28Battle-Scarred%29`,
+            wellWorn: `https://steamcommunity.com/market/listings/730/${weapon}%20%7C%20${encodeURIComponent(tempToAdd)}%20%28Well-Worn%29`,
+            factoryNew: `https://steamcommunity.com/market/listings/730/${weapon}%20%7C%20${encodeURIComponent(tempToAdd)}%20%28Factory%20New%29`,
+            notPainted: `https://steamcommunity.com/market/search?q=Redline&category_730_Weapon%5B%5D=tag_weapon_ak47&appid=730`,
+            compare: `https://steamcommunity.com/market/search?q=${tempToAdd}&category_730_Weapon%5B%5D=tag_weapon_${weapon.toLowerCase().replace(/-|\s/g,"")}&appid=730`
+          })
         }
-      }  
+      }
       return skinsList;
     })
     return skinsList.map((weapon) => {
-      return <li>{weapon}</li>
+      index += 1
+      return (
+        <>
+        <li>
+        <Popover
+          position={Position.BOTTOM_LEFT}
+          content={
+            <Menu>
+              <Menu.Group title="Quality">
+                <Menu.Item icon="caret-right">
+                  <a href={buyLink[index].fieldTested} target="_blank" rel="noopener noreferrer">
+                    Field-Tested
+                  </a>
+                </Menu.Item>
+                <Menu.Item icon="caret-right">
+                  <a href={buyLink[index].minimalWear} target="_blank" rel="noopener noreferrer">
+                    Minimal Wear
+                  </a>
+                </Menu.Item>
+                <Menu.Item icon="caret-right">
+                  <a href={buyLink[index].battleScarred} target="_blank" rel="noopener noreferrer">
+                    Battle-Scarred
+                  </a>
+                </Menu.Item>
+                <Menu.Item icon="caret-right" secondaryText="Worst">
+                  <a href={buyLink[index].wellWorn} target="_blank" rel="noopener noreferrer">
+                    Well-Worn
+                  </a>
+                </Menu.Item>
+                <Menu.Item icon="caret-right" secondaryText="Best">
+                  <a href={buyLink[index].factoryNew} target="_blank" rel="noopener noreferrer">
+                    Factory New
+                  </a>
+                </Menu.Item>
+                <Menu.Item icon="caret-right">
+                  <a href={buyLink[index].notPainted} target="_blank" rel="noopener noreferrer">
+                    Not Painted
+                  </a>
+                </Menu.Item>
+              </Menu.Group>
+              <Menu.Divider />
+              <Menu.Item icon="calculator">
+                <a href={buyLink[index].compare} target="_blank" rel="noopener noreferrer">
+                  Compare
+                </a>
+              </Menu.Item>
+            </Menu>
+          }
+        >
+          <Button id="weaponButton" marginRight={16}>{weapon}</Button>
+        </Popover>
+        </li>
+        </>
+      )
     })     
   }
 
