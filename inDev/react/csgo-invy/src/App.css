@@ -34,21 +34,41 @@ html {
 }
 
 a {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 
-a:hover, #weaponList:hover {
+a:hover, li:hover, #weaponList:hover {
 	color: #0ae;
+	cursor: pointer;
 }
 
 #weaponList {
 	color: white;
 }
 
-#weaponButton {
-	border: 1px solid #1B2936;
-	background: inherit;
-	color: white;
-	margin-bottom: 2px
+#weaponButton:hover {
+	background: #0ae;
+}
+
+#parent {
+	display: flex;
+}
+
+#left {
+	width: 300px;
+}
+
+#right {
+	flex: 1;
+	display: flex;           /* establish flex container */
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+	align-items: center;     /* center items horizontally, in this case */
+	margin-left: 200px;
+	margin-right: 200px;
+}
+
+#buy {
+	color: black;
 }
