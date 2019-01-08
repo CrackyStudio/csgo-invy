@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router } from "react-router-dom";
-import { Pane, Tablist, SidebarTab, Button, TextInput, toaster, Position, Popover, Menu} from "evergreen-ui";
+import { Pane, Tablist, SidebarTab, Button, TextInput, toaster } from "evergreen-ui";
 import logo from './logo.gif'
 import skinsList from './skinsList.json'
 import Component from "@reactions/component";
@@ -16,7 +16,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = ({
-      currentInput: ''
+      currentInput: '',
+      selectedWeapon: '',
+      selectedSkin: '',
+      selectedImage: "",
+      selectedBuy: "",
     });
   }
 
@@ -84,7 +88,6 @@ class App extends Component {
   
   buildList(weapon) {  
     let skinsList = [];
-    let buyLink = [];
     let index = -1;
     let reg = new RegExp(`^${weapon}`, "g");
     missingWeaponSkinsArray.map((e) => {   
@@ -92,76 +95,67 @@ class App extends Component {
         let tempToAdd = e.replace(new RegExp(`${weapon} \\| `, "g"), "");
         if (skinsList.includes(tempToAdd) === false) {
           skinsList.push(tempToAdd)
-          // Buy link for knife to add (tag_weapon_elite pour les berettas)
-          buyLink.push({
-            fieldTested: `https://steamcommunity.com/market/listings/730/${weapon}%20%7C%20${encodeURIComponent(tempToAdd)}%20%28Field-Tested%29`,
-            minimalWear: `https://steamcommunity.com/market/listings/730/${weapon}%20%7C%20${encodeURIComponent(tempToAdd)}%20%28Minimal%20Wear%29`,
-            battleScarred: `https://steamcommunity.com/market/listings/730/${weapon}%20%7C%20${encodeURIComponent(tempToAdd)}%20%28Battle-Scarred%29`,
-            wellWorn: `https://steamcommunity.com/market/listings/730/${weapon}%20%7C%20${encodeURIComponent(tempToAdd)}%20%28Well-Worn%29`,
-            factoryNew: `https://steamcommunity.com/market/listings/730/${weapon}%20%7C%20${encodeURIComponent(tempToAdd)}%20%28Factory%20New%29`,
-            notPainted: `https://steamcommunity.com/market/search?q=Redline&category_730_Weapon%5B%5D=tag_weapon_ak47&appid=730`,
-            compare: `https://steamcommunity.com/market/search?q=${tempToAdd}&category_730_Weapon%5B%5D=tag_weapon_${weapon.toLowerCase().replace(/-|\s/g,"")}&appid=730`
-          })
         }
       }
       return skinsList;
     })
-    return skinsList.map((weapon) => {
-      index += 1
+    return skinsList.map((skin) => {
+      index = index + 1
       return (
         <>
-        <li>
-        <Popover
-          position={Position.BOTTOM_LEFT}
-          content={
-            <Menu>
-              <Menu.Group title="Quality">
-                <Menu.Item icon="caret-right">
-                  <a href={buyLink[index].fieldTested} target="_blank" rel="noopener noreferrer">
-                    Field-Tested
-                  </a>
-                </Menu.Item>
-                <Menu.Item icon="caret-right">
-                  <a href={buyLink[index].minimalWear} target="_blank" rel="noopener noreferrer">
-                    Minimal Wear
-                  </a>
-                </Menu.Item>
-                <Menu.Item icon="caret-right">
-                  <a href={buyLink[index].battleScarred} target="_blank" rel="noopener noreferrer">
-                    Battle-Scarred
-                  </a>
-                </Menu.Item>
-                <Menu.Item icon="caret-right" secondaryText="Worst">
-                  <a href={buyLink[index].wellWorn} target="_blank" rel="noopener noreferrer">
-                    Well-Worn
-                  </a>
-                </Menu.Item>
-                <Menu.Item icon="caret-right" secondaryText="Best">
-                  <a href={buyLink[index].factoryNew} target="_blank" rel="noopener noreferrer">
-                    Factory New
-                  </a>
-                </Menu.Item>
-                <Menu.Item icon="caret-right">
-                  <a href={buyLink[index].notPainted} target="_blank" rel="noopener noreferrer">
-                    Not Painted
-                  </a>
-                </Menu.Item>
-              </Menu.Group>
-              <Menu.Divider />
-              <Menu.Item icon="calculator">
-                <a href={buyLink[index].compare} target="_blank" rel="noopener noreferrer">
-                  Compare
-                </a>
-              </Menu.Item>
-            </Menu>
-          }
-        >
-          <Button id="weaponButton" marginRight={16}>{weapon}</Button>
-        </Popover>
-        </li>
+        <li href="#" onClick={() => this.setSelectedWeapon(weapon, skin)}>{skin}</li>
         </>
       )
     })     
+  }
+  
+  async setSelectedWeapon(weapon, skin) {
+    const {
+      currentInput
+    } = this.state;
+    let link = "";
+    let buy = "";
+    let response = await fetch(`https://cors-anywhere.herokuapp.com/https://steamcommunity.com/market/listings/730/${weapon}%20%7C%20${encodeURIComponent(skin)}%20%28Factory%20New%29/render?start=0&count=1&currency=1&format=json`, {
+        headers: {
+            "Content-Type": "application/json",
+          },
+          method: "GET",
+        })
+        if (response.ok) {
+          const json = await response.json();
+          if (json.success === true) {
+            link = `${json.results_html.match(/" src=(.*)" srcset/)[1].substr(1).slice(0, -7)}360fx360f`
+            // if listinginfo is not empty
+            buy = `https://steamcommunity.com/market/search?q=${skin}&category_730_Weapon%5B%5D=tag_weapon_${weapon.toLowerCase().replace(/-|\s/g,"")}&appid=730`;
+            // weapon marketname Glock-18 must be glock, Dual Berettas must be elite, etc...
+          }
+        }
+    await this.setState({currentInput, selectedWeapon: weapon, selectedSkin: skin, selectedImage: link, selectedBuy: buy})
+  }
+
+  buildWeaponPanel() {
+    if (this.state.selectedWeapon === "") {
+      return(
+        <div id="right"></div>
+      )
+    } else {
+      return(
+        <div id="right" border="1px solid white">
+        <>
+          <br/>
+          {this.state.selectedWeapon} | {this.state.selectedSkin}
+          <br/><br/>
+          <img border="1px solid white" src={this.state.selectedImage} alt={`${this.state.selectedWeapon} | ${this.state.selectedSkin}`}></img>
+          <br/>
+          <Button id="weaponButton">      
+            <a id="buy" href={this.state.selectedBuy} target="_blank" rel="noopener noreferrer">
+              Buy
+            </a>
+          </Button>
+        </>
+        </div>
+      )
+    }
   }
 
   render() {
@@ -217,18 +211,23 @@ class App extends Component {
                       aria-hidden={index !== state.selectedIndex}
                       display={index === state.selectedIndex ? 'block' : 'none'}
                     >
-                    { 
-                      weaponList.map((weapon) => (
-                        index === state.selectedIndex && tab === weapon && ( 
-                          <>
-                            {weapon} you still don't own:
-                            <br/><br/>
-                            {this.buildList(weapon)}
-                            <br/>
-                          </>
-                        )
-                      ))
-                    }
+                    <div id="parent">
+                      <div id="left">
+                      { 
+                        weaponList.map((weapon) => (
+                          index === state.selectedIndex && tab === weapon && ( 
+                            <>
+                              {weapon} you still don't own:
+                              <br/><br/>
+                              {this.buildList(weapon)}
+                              <br/>
+                            </>
+                          )
+                        ))
+                      }
+                      </div>
+                      {this.buildWeaponPanel()}
+                    </div>
                     </Pane>
                   ))}
                 </Pane>
