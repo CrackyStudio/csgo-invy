@@ -9,8 +9,8 @@ import Component from "@reactions/component";
 let missingWeaponSkinsArray = [];
 let weaponList = ["AK-47", "AUG", "AWP", "Bayonet", "Bowie Knife", "Butterfly Knife", "CZ75-Auto", "Desert Eagle", "Dual Berettas", 
 "Falchion Knife", "FAMAS", "Five-SeveN", "Flip Knife", "G3SG1", "Galil AR", "Glock-18", "Gut Knife", "Huntsman Knife", "Karambit", 
-"M249", "M4A1-S", "M4A4", "M9 Bayonet", "MAC-10", "MAG-7", "MP5-SD", "MP7", "MP9", "Negev", "Nova", "P2000", "P250", "P90", "PP-Bizon", 
-"R8 Revolver", "Sawed-Off", "SCAR-20", "SG 553", "Shadow Daggers", "SSG 08", "Tec-9", "UMP-45", "USP-S", "XM1014"];
+"M249", "M4A1-S", "M4A4", "M9 Bayonet", "MAC-10", "MAG-7", "MP5-SD", "MP7", "MP9", "Navaja Knife", "Negev", "Nova", "P2000", "P250", "P90", "PP-Bizon", 
+"R8 Revolver", "Sawed-Off", "SCAR-20", "SG 553", "Shadow Daggers", "SSG 08", "Stiletto Knife", "Talon Knife", "Tec-9", "UMP-45", "Ursus Knife", "USP-S", "XM1014"];
 
 class App extends Component {
   constructor(props) {
@@ -124,10 +124,40 @@ class App extends Component {
         if (response.ok) {
           const json = await response.json();
           if (json.success === true) {
-            link = `${json.results_html.match(/" src=(.*)" srcset/)[1].substr(1).slice(0, -7)}360fx360f`
-            // if listinginfo is not empty
-            buy = `https://steamcommunity.com/market/search?q=${skin}&category_730_Weapon%5B%5D=tag_weapon_${weapon.toLowerCase().replace(/-|\s/g,"")}&appid=730`;
-            // weapon marketname Glock-18 must be glock, Dual Berettas must be elite, etc...
+            if (json.listinginfo.length !== 0) {
+              link = `${json.results_html.match(/" src=(.*)" srcset/)[1].substr(1).slice(0, -7)}360fx360f`
+              // DON T FORGET TO ADD NAVAJA KNIFE, STILETTO KNIFE, TALON KNIFE AND URSUS KNIFE IN WEAPON LIST
+              // weapon marketname :
+              // Bowie Knife = knife_survival_bowie
+              // Butterfly Knife = knife_butterfly
+              // CZ75-Auto = cz75a
+              // Desert Eagle = deagle
+              // Dual Berettas = elite
+              // Falchion Knife = knife_falchion
+              // Flip Knife = knife_flip
+              // Glock-18 = glock
+              // Gut Knife = knife_gut
+              // Huntsman Knife = knife_tactical
+              // Karambit = knife_karambit
+              // M4A1-S = m4a1_silencer
+              // M4A4 = m4a1
+              // M9 Bayonet = knife_m9_bayonet
+              // Navaja Knife = knife_gypsy_jackknife
+              // P2000 = hkp2000
+              // PP-Bizon = bizon
+              // R8 Revolver = revolver
+              // SG 553 = sg556
+              // Shadow Daggers = knife_push
+              // Stiletto Knife = knife_stiletto
+              // Talon Knife = knife_widowmaker
+              // Ursus Knife = knife_ursus
+              // USP-S = usp_silencer
+              buy = `https://steamcommunity.com/market/search?q=${skin}&category_730_Weapon%5B%5D=tag_weapon_${weapon.toLowerCase().replace(/-|\s/g,"")}&appid=730`;  
+            } else {
+              // Skin is not available in Factory New (no one sell it)
+              link = "#"
+              buy = "#"
+            }
           }
         }
     await this.setState({currentInput, selectedWeapon: weapon, selectedSkin: skin, selectedImage: link, selectedBuy: buy})
@@ -164,7 +194,9 @@ class App extends Component {
         <>
           <Pane display="flex" background="#171A21" borderRadius={3} height={"10vh"} alignItems="center">
             <Pane paddingLeft={12} flex={1} alignItems="center" display="flex">
+            <a href="https://www.crackystudio.com/" target="_blank" rel="noopener noreferrer">
               <img src={logo} alt="Logo" width={100}/>
+            </a>
             </Pane>
             <Component initialState={{ value: ''}}>
               <TextInput
