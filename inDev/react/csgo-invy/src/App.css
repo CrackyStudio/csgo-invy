@@ -61,10 +61,10 @@ a:hover, li:hover, #weaponList:hover {
 
 #right {
 	flex: 1;
-	display: flex;           /* establish flex container */
-    flex-direction: column;  /* make main axis vertical */
-    justify-content: center; /* center items vertically, in this case */
-	align-items: center;     /* center items horizontally, in this case */
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+	align-items: center;
 	margin-left: 200px;
 	margin-right: 200px;
 }
