@@ -126,7 +126,6 @@ class App extends Component {
           if (json.success === true) {
             if (json.listinginfo.length !== 0) {
               link = `${json.results_html.match(/" src=(.*)" srcset/)[1].substr(1).slice(0, -7)}360fx360f`
-              // weapon marketname :
               // Bowie Knife = knife_survival_bowie
               // Butterfly Knife = knife_butterfly
               // CZ75-Auto = cz75a
