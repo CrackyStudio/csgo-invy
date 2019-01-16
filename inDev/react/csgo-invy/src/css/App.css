@@ -1,0 +1,82 @@
+html {
+	overflow: hidden;
+}
+
+body {
+	background: #1B2936;
+}
+
+#navbar {
+	display: flex;
+	background: #171A21;
+	height: 8vh;
+	align-items: center;
+	padding: 16px 32px 16px 32px;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
+#logo{
+	height: 5vh;
+	margin-right: 20px;
+}
+
+a, #navbar-p {
+	text-decoration: none;
+	color: #5F6971;
+	padding-right: 30px;
+}
+
+a:hover, #navbar-p:hover {
+	color: white;
+	cursor: pointer;
+}
+
+#navbar-p-active {
+	padding-right: 30px;
+	color: #0ae;
+}
+
+#navbar-p-active:hover {
+	cursor: pointer;
+	color: white;
+}
+
+#a-money:hover {
+	color:#00FF00;
+}
+
+#main {
+	display: flex;
+	height: 87vh;
+	color: white;
+}
+
+#urlInput {
+	background: #5F6971;
+	color: white;
+}
+
+#urlInput::placeholder {
+	color: #d9d9d9;
+}
+
+#credit {
+	display: flex;
+	background: #171A21;
+	height: 5vh;
+	color: #5F6971;
+	font-size: 14px;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
+#love:before {
+	content: "💙";
+}
+
+#love:hover:before {
+	content: "❤️";
+}
