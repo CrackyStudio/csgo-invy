@@ -1,0 +1,95 @@
+html {
+	background: #1F1F1F;
+	overflow: hidden;
+}
+
+#wScrollBar::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+#wScrollBar::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#wScrollBar::-webkit-scrollbar-thumb
+{
+	background-color: #0ae;
+}
+
+#mainBut:hover {
+	color: black;
+	background: #0ae;
+}
+
+#mainInput {
+	background: #5F6971;
+	color: white;
+}
+
+#mainInput::placeholder {
+	color: white;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover, li:hover, #weaponList:hover {
+	color: #0ae;
+	cursor: pointer;
+}
+
+#weaponList {
+	color: white;
+}
+
+#weaponButton {
+	margin-bottom: 15px;
+	padding: none;
+	width: 50px;
+}
+
+#weaponButton:hover {
+	background: #0ae;
+}
+
+#parent {
+	display: flex;
+}
+
+#weapons-tab {
+	width: 100%;
+}
+
+#buy {
+	color: black;
+}
+
+.weaponBox {
+	border: 1px solid white;
+	width: 300px;
+	overflow: hidden;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.weaponIMG{
+	width:90%;
+	object-fit: contain;
+}
+
+.weapons-container {
+	display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+	align-items: center;
+	margin-right: 48px;    
+}
