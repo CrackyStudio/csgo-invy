@@ -130,9 +130,9 @@ class App extends Component {
             <a href="https://github.com/CrackyStudio/csgo-invy" target="_blank" rel="noopener noreferrer">
               Open Source
             </a>
-            <p id={isActive == "Feedback" ? "navbar-p-active" : "navbar-p"} onClick={e => this.setActive(e.target.textContent)}>
+            <a href="https://steamcommunity.com/id/crackystudio/" target="_blank" rel="noopener noreferrer">
               Feedback
-            </p>
+            </a>
           </Pane>
           <Pane id="main">
             {isActive =="Dashboard" && (
