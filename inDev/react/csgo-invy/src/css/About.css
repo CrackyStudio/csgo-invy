@@ -1,0 +1,41 @@
+.content {
+    width: 60vw;
+    margin-left: 20vw;
+    padding-right: 20vw;
+    overflow:auto;
+    overflow-x:hidden;
+}
+
+p {
+    text-align: justify;
+}
+
+.p-a {
+    text-decoration: underline;
+    color: white;
+    padding-right: 0px;
+}
+
+.p-a:hover {
+    color: #0ae;
+}
+
+h1, strong {
+    color: #0ae;
+}
+
+.content::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+.content::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.content::-webkit-scrollbar-thumb
+{
+	background-color: #0ae;
+}
