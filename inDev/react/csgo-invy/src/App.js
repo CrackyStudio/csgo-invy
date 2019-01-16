@@ -1,10 +1,15 @@
-import React from 'react';
-import './App.css';
+import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { Pane, Tablist, SidebarTab, Button, TextInput, toaster } from "evergreen-ui";
-import logo from './logo.gif'
-import skinsList from './skinsList.json'
+import { TextInput, Pane, toaster } from "evergreen-ui";
 import Component from "@reactions/component";
+
+import About from "./pages/About";
+import Dashboard from "./pages/Dashboard";
+import Feedback from "./pages/Feedback";
+
+import logo from './res/csgo-invy-logo.png'
+import "./css/App.css";
+import skinsList from './res/skinsList.json'
 
 let missingWeaponSkinsArray = [];
 let weaponList = ["AK-47", "AUG", "AWP", "Bayonet", "Bowie Knife", "Butterfly Knife", "CZ75-Auto", "Desert Eagle", "Dual Berettas", 
@@ -17,11 +22,18 @@ class App extends Component {
     super(props);
     this.state = ({
       currentInput: '',
-      selectedWeapon: '',
-      selectedSkin: '',
-      selectedImage: "",
-      selectedBuy: "",
+      isOnline: false,
+      isActive: 'About',
     });
+  }
+
+  setStatus = async (e) => {
+    await this.setState({ currentInput: e });
+    await this.getJSON();
+  };  
+
+  setActive = (page) => {
+    this.setState({ isActive: page });
   }
 
   getJSON = async (response) => {
@@ -84,186 +96,67 @@ class App extends Component {
         missingWeaponSkinsArray.push(missingSkinsArray[i])      
       }
     }
+    this.setState({ isOnline: true });
   }
   
-  buildList(weapon) {  
-    let skinsList = [];
-    let index = -1;
-    let reg = new RegExp(`^${weapon}`, "g");
-    missingWeaponSkinsArray.map((e) => {   
-      if (e.search(reg) > -1) {
-        let tempToAdd = e.replace(new RegExp(`${weapon} \\| `, "g"), "");
-        if (skinsList.includes(tempToAdd) === false) {
-          skinsList.push(tempToAdd)
-        }
-      }
-      return skinsList;
-    })
-    return skinsList.map((skin) => {
-      index = index + 1
-      return (
-        <>
-        <li href="#" onClick={() => this.setSelectedWeapon(weapon, skin)}>{skin}</li>
-        </>
-      )
-    })     
-  }
-  
-  async setSelectedWeapon(weapon, skin) {
-    const {
-      currentInput
-    } = this.state;
-    let link = "";
-    let buy = "";
-    let response = await fetch(`https://cors-anywhere.herokuapp.com/https://steamcommunity.com/market/listings/730/${weapon}%20%7C%20${encodeURIComponent(skin)}%20%28Factory%20New%29/render?start=0&count=1&currency=1&format=json`, {
-        headers: {
-            "Content-Type": "application/json",
-          },
-          method: "GET",
-        })
-        if (response.ok) {
-          const json = await response.json();
-          if (json.success === true) {
-            if (json.listinginfo.length !== 0) {
-              link = `${json.results_html.match(/" src=(.*)" srcset/)[1].substr(1).slice(0, -7)}360fx360f`
-              // Bowie Knife = knife_survival_bowie
-              // Butterfly Knife = knife_butterfly
-              // CZ75-Auto = cz75a
-              // Desert Eagle = deagle
-              // Dual Berettas = elite
-              // Falchion Knife = knife_falchion
-              // Flip Knife = knife_flip
-              // Glock-18 = glock
-              // Gut Knife = knife_gut
-              // Huntsman Knife = knife_tactical
-              // Karambit = knife_karambit
-              // M4A1-S = m4a1_silencer
-              // M4A4 = m4a1
-              // M9 Bayonet = knife_m9_bayonet
-              // Navaja Knife = knife_gypsy_jackknife
-              // P2000 = hkp2000
-              // PP-Bizon = bizon
-              // R8 Revolver = revolver
-              // SG 553 = sg556
-              // Shadow Daggers = knife_push
-              // Stiletto Knife = knife_stiletto
-              // Talon Knife = knife_widowmaker
-              // Ursus Knife = knife_ursus
-              // USP-S = usp_silencer
-              buy = `https://steamcommunity.com/market/search?q=${skin}&category_730_Weapon%5B%5D=tag_weapon_${weapon.toLowerCase().replace(/-|\s/g,"")}&appid=730`;  
-            } else {
-              // Skin is not available in Factory New (no one sell it)
-              link = "#"
-              buy = "#"
-            }
-          }
-        }
-    await this.setState({currentInput, selectedWeapon: weapon, selectedSkin: skin, selectedImage: link, selectedBuy: buy})
-  }
-
-  buildWeaponPanel() {
-    if (this.state.selectedWeapon === "") {
-      return(
-        <div id="right"></div>
-      )
-    } else {
-      return(
-        <div id="right" border="1px solid white">
-        <>
-          <br/>
-          {this.state.selectedWeapon} | {this.state.selectedSkin}
-          <br/><br/>
-          <img border="1px solid white" src={this.state.selectedImage} alt={`${this.state.selectedWeapon} | ${this.state.selectedSkin}`}></img>
-          <br/>
-          <Button id="weaponButton">      
-            <a id="buy" href={this.state.selectedBuy} target="_blank" rel="noopener noreferrer">
-              Buy
-            </a>
-          </Button>
-        </>
-        </div>
-      )
-    }
-  }
-
   render() {
+    const { isOnline, isActive } = this.state;
     return (
       <Router>
         <>
-          <Pane display="flex" background="#171A21" borderRadius={3} height={"10vh"} alignItems="center">
-            <Pane paddingLeft={12} flex={1} alignItems="center" display="flex">
-            <a href="https://www.crackystudio.com/" target="_blank" rel="noopener noreferrer">
-              <img src={logo} alt="Logo" width={100}/>
-            </a>
-            </Pane>
+          <Pane id="navbar">
+            <img id="logo" src={logo} alt="Logo"/>
             <Component initialState={{ value: ''}}>
-              <TextInput
-                id="mainInput"
-                marginRight={16}
-                width={350}
-                placeholder="Insert Steam URL here"
-                onChange={e => this.setState({ currentInput: e.target.value })}
-                value={this.state.currentInput}
-              />
-            }
+                {() => (
+                  <TextInput
+                    id="urlInput"
+                    marginRight={30}
+                    // onChange={e => alert(e.target.value)}
+                    onChange={e => this.setStatus(e.target.value)}
+                    value={this.state.currentInput}
+                    placeholder="Paste Steam URL here"
+                  />
+                )}
             </Component>
-            <Button id="mainBut" background="#5F7B1F" color="white" marginRight={16} onClick={this.getJSON}>Get Inventory</Button>
+            <p id={isActive == "About" ? "navbar-p-active" : "navbar-p"} onClick={e => this.setActive(e.target.textContent)}>
+              About
+            </p>
+            <p id={isActive == "Dashboard" ? "navbar-p-active" : "navbar-p"} onClick={e => this.setActive(e.target.textContent)}>
+              Dashboard
+            </p>
+            <a id="a-money" href="https://www.paypal.me/officialcracky/" target="_blank" rel="noopener noreferrer">
+              Donation
+            </a>
+            <a href="https://github.com/CrackyStudio/csgo-invy" target="_blank" rel="noopener noreferrer">
+              Open Source
+            </a>
+            <p id={isActive == "Feedback" ? "navbar-p-active" : "navbar-p"} onClick={e => this.setActive(e.target.textContent)}>
+              Feedback
+            </p>
           </Pane>
-
-          <Component 
-            initialState={{
-              selectedIndex: 0,
-              tabs: weaponList
-            }}
-          >
-            {({ state, setState }) => (
-              <Pane display="flex" height={"90vh"}>
-                <Tablist id="wScrollBar" flexBasis={140} float="right" overflow="auto">
-                  {state.tabs.map((tab, index) => (
-                    <SidebarTab
-                      key={tab}
-                      id={tab}
-                      onSelect={() => setState({ selectedIndex: index })}
-                      isSelected={index === state.selectedIndex}
-                      aria-controls={`panel-${tab}`}
-                    >
-                      {tab}
-                    </SidebarTab>
-                  ))}
-                </Tablist>
-                <Pane id="wScrollBar" overflowY="auto" minHeight={450} padding={16} paddingBottom={30} background="#1B2936" color="white" flex="1">
-                  {state.tabs.map((tab, index) => (
-                    <Pane
-                      key={tab}
-                      id={`panel-${tab}`}
-                      role="tabpanel"
-                      aria-labelledby={tab}
-                      aria-hidden={index !== state.selectedIndex}
-                      display={index === state.selectedIndex ? 'block' : 'none'}
-                    >
-                    <div id="parent">
-                      <div id="left">
-                      { 
-                        weaponList.map((weapon) => (
-                          index === state.selectedIndex && tab === weapon && ( 
-                            <>
-                              {weapon} you still don't own:
-                              <br/><br/>
-                              {this.buildList(weapon)}
-                              <br/>
-                            </>
-                          )
-                        ))
-                      }
-                      </div>
-                      {this.buildWeaponPanel()}
-                    </div>
-                    </Pane>
-                  ))}
-                </Pane>
-              </Pane>
+          <Pane id="main">
+            {isActive =="Dashboard" && (
+              <>
+              {isOnline && (
+                <Dashboard weaponList={weaponList} missingWeaponSkinsArray={missingWeaponSkinsArray}/>
+              )}
+              {!isOnline && (
+                "Offline"
+              )}
+              </>
             )}
-          </Component>
+            {isActive == "About" && (
+              <About/>
+            )}
+            {isActive == "Feedback" && (
+              <Feedback/>
+            )}
+          </Pane>
+          <Pane id="credit">            
+            <p>
+              2018-2019, CSGO Invy with <span id="love"/> by <a href="https://steamcommunity.com/id/crackystudio/" target="_blank" rel="noopener noreferrer">Cracky</a>
+            </p>
+          </Pane>  
         </>
       </Router>
     );
