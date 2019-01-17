@@ -87,7 +87,7 @@ export default class Dashboard extends Component {
                             <Pane key={index} width="90vw">
                                 {index === state.selectedIndex && tab === weapon && ( 
                                     <>
-                                        {weapon} you still don't own:
+                                        Missing {weapon}: &emsp;
                                         <br/><br/>
                                           <div className="weapons-container">
                                             {this.createList(weapon)}
