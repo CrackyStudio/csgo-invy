@@ -96,7 +96,7 @@ class App extends Component {
         missingWeaponSkinsArray.push(missingSkinsArray[i])      
       }
     }
-    this.setState({ isOnline: true });
+    this.setState({ isOnline: true, isActive: 'Dashboard' });
   }
   
   render() {
@@ -111,8 +111,8 @@ class App extends Component {
                   <TextInput
                     id="urlInput"
                     marginRight={30}
-                    // onChange={e => alert(e.target.value)}
                     onChange={e => this.setStatus(e.target.value)}
+                    onClick={e => e.target.value = ""}
                     value={this.state.currentInput}
                     placeholder="Paste Steam URL here"
                   />
