@@ -8,7 +8,7 @@ import skinsAPI from '../res/skins.json'
 export default class Dashboard extends Component {
     createList = (weapon) => {
         return this.props.missingWeaponSkinsArray.map(item => {
-            if (item.replace(new RegExp(` \\|(.*)`, "g"), "") == weapon) {
+            if (item.replace(new RegExp(` \\|(.*)`, "g"), "") === weapon) {
                 let skin = item.replace(new RegExp(`${weapon} \\| `, "g"), "");
                 if (skinsAPI[weapon][skin] !== undefined) {
                   let validImage = "";
@@ -29,7 +29,7 @@ export default class Dashboard extends Component {
                       }
                     }
                   }
-                  return(
+                  return (
                     <>
                       <div className="weaponBox">
                         {skin}
@@ -43,6 +43,9 @@ export default class Dashboard extends Component {
                     </>
                   )
                 }
+                return null
+            } else {
+              return null
             }
         })
     }
