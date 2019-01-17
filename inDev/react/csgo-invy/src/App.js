@@ -118,10 +118,10 @@ class App extends Component {
                   />
                 )}
             </Component>
-            <p id={isActive == "About" ? "navbar-p-active" : "navbar-p"} onClick={e => this.setActive(e.target.textContent)}>
+            <p id={isActive === "About" ? "navbar-p-active" : "navbar-p"} onClick={e => this.setActive(e.target.textContent)}>
               About
             </p>
-            <p id={isActive == "Dashboard" ? "navbar-p-active" : "navbar-p"} onClick={e => this.setActive(e.target.textContent)}>
+            <p id={isActive === "Dashboard" ? "navbar-p-active" : "navbar-p"} onClick={e => this.setActive(e.target.textContent)}>
               Dashboard
             </p>
             <a id="a-money" href="https://www.paypal.me/officialcracky/" target="_blank" rel="noopener noreferrer">
@@ -135,7 +135,7 @@ class App extends Component {
             </a>
           </Pane>
           <Pane id="main">
-            {isActive =="Dashboard" && (
+            {isActive ==="Dashboard" && (
               <>
               {isOnline && (
                 <Dashboard weaponList={weaponList} missingWeaponSkinsArray={missingWeaponSkinsArray}/>
@@ -145,10 +145,10 @@ class App extends Component {
               )}
               </>
             )}
-            {isActive == "About" && (
+            {isActive === "About" && (
               <About/>
             )}
-            {isActive == "Feedback" && (
+            {isActive === "Feedback" && (
               <Feedback/>
             )}
           </Pane>
