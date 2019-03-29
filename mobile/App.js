@@ -1,7 +1,9 @@
 import React from 'react';
-import { TextInput, View, Image, ScrollView, Button, Text } from 'react-native';
+import { TextInput, View, Image, ScrollView, Button, Text, Picker, Keyboard } from 'react-native';
+import AnimatedEllipsis from 'react-native-animated-ellipsis';
 import styles from "./style";
 import skinsList from './skinsList.json'
+import skinsAPI from './skins.json'
 
 let weaponList = ["AK-47", "AUG", "AWP", "Bayonet", "Bowie Knife", "Butterfly Knife", "CZ75-Auto", "Desert Eagle", "Dual Berettas", 
 "Falchion Knife", "FAMAS", "Five-SeveN", "Flip Knife", "G3SG1", "Galil AR", "Glock-18", "Gut Knife", "Huntsman Knife", "Karambit", 
@@ -13,8 +15,10 @@ export default class App extends React.Component {
     super(props);
     this.state = { 
       input: '',
+      fetching: false,
       fetched: false,
       missingWeaponSkinsArray: [],
+      weapon: "AK-47",
     };
   }
 
@@ -34,23 +38,40 @@ export default class App extends React.Component {
             <Button
               onPress={() => this.getJSON(this.state.input)}
               title="Search"
-              color="#841584"
-              accessibilityLabel="Search a TV Show"
+              color='#0ae'
+              accessibilityLabel="Get JSON"
             />
           </View>
         </View>
+        <View style={styles.weaponPicker}>
+          <Text style={styles.selectedWeapon}>
+            Selected weapon: 
+          </Text>
+          <Picker
+            hideUnderline
+            selectedValue={this.state.weapon}
+            style={styles.picker}
+            itemStyle={styles.itemStyle}
+            onValueChange={(itemValue) =>
+              this.setState({weapon: itemValue})
+            }>
+            <Picker.Item label="AK-47" value="AK-47" />
+            <Picker.Item label="AUG" value="AUG" />
+          </Picker>
+        </View>
         <View style={styles.main}>
-        <ScrollView contentContainerStyle={styles.mainContainer}>
-          {this.items()}
-        </ScrollView>
+          <ScrollView contentContainerStyle={styles.mainContainer}>
+            {this.items()}
+          </ScrollView>
         </View>
       </View>
     );
   }
 
   items() {
+    let weapon = this.state.weapon;
+    let index = 0;
     if (this.state.fetched) {
-      console.log(this.state.missingWeaponSkinsArray)
       return this.state.missingWeaponSkinsArray.map(item => {
         if (item.replace(new RegExp(` \\|(.*)`, "g"), "") === weapon) {
             let skin = item.replace(new RegExp(`${weapon} \\| `, "g"), "");
@@ -73,11 +94,12 @@ export default class App extends React.Component {
                   }
                 }
               }
+              index +=1;
               // Add in return below : href={skinsAPI[weapon][skin]["Compare"]["buyLink"]} target="_blank" rel="noopener noreferrer"
               return (
                 <View key={index} style={styles.itemContainer}>
                   <Text style={styles.item}>{skin}</Text>
-                  <Image style={styles.logo} source={{uri: validImage}}/>
+                  <Image style={styles.itemImage} source={{uri: validImage}}/>
                 </View>
               )
             }
@@ -86,10 +108,20 @@ export default class App extends React.Component {
           return null
         }
       })
+    } else {
+      if (this.state.fetching) {
+        return (
+          <AnimatedEllipsis numberOfDots={3} animationDelay={100} style={{color: '#0ae', fontSize: 72}}/>
+        )
+      }
     }
   }
 
   getJSON = async (profileURL) => {
+    this.setState({ 
+      fetching: true, 
+    });
+    Keyboard.dismiss()
     const URL = `${profileURL}inventory/json/730/2`;
     try {
       let response = await fetch(
@@ -143,6 +175,7 @@ export default class App extends React.Component {
       }
     }
     this.setState({ 
+      fetching: false,
       fetched: true, 
     });
   }

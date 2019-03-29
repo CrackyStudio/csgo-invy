@@ -24,6 +24,13 @@ export default StyleSheet.create({
         width: vmin(10),
         height: vmin(10),
     },
+    itemImage: {
+        marginTop: vmin(2.5),
+        marginBottom: vmin(2.5),
+        marginLeft: vmin(3.5),
+        width: vmin(30),
+        height: vmin(30),
+    },
     input: {
         backgroundColor: '#5F6971',
         color: 'white',
@@ -40,7 +47,7 @@ export default StyleSheet.create({
     buttonContainer: {
         width: vmin(20),
         height: vmax(8),
-        margin: vmin(3),
+        margin: vmin(2.5),
     },
     mainContainer: {
         justifyContent: "center",
@@ -59,5 +66,26 @@ export default StyleSheet.create({
         width: vmin(80),
         justifyContent: "center",
         alignItems: "center",
+    },
+    picker: {
+        color: "white",
+        backgroundColor: "#0ae", //#1B2936
+        width: vmin(60),
+        height: vmin(10),
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    itemStyle: {
+        textAlign: 'center',
+    },
+    weaponPicker: {
+        backgroundColor: "#0ae",
+        alignItems: 'center',
+        flexDirection: 'row',
+    },
+    selectedWeapon: {
+        paddingLeft: vmin(3),
+        color: 'white',
+        backgroundColor: "#0ae",
     }
 });
