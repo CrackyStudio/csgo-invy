@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextInput, View, Image, ScrollView, Button, Text } from 'react-native';
-import styles from "./style"
+import styles from "./style";
+import skinsList from './skinsList.json'
 
 let weaponList = ["AK-47", "AUG", "AWP", "Bayonet", "Bowie Knife", "Butterfly Knife", "CZ75-Auto", "Desert Eagle", "Dual Berettas", 
 "Falchion Knife", "FAMAS", "Five-SeveN", "Flip Knife", "G3SG1", "Galil AR", "Glock-18", "Gut Knife", "Huntsman Knife", "Karambit", 
@@ -12,7 +13,8 @@ export default class App extends React.Component {
     super(props);
     this.state = { 
       input: '',
-      fetchResponse: [], 
+      fetched: false,
+      missingWeaponSkinsArray: [],
     };
   }
 
@@ -47,13 +49,44 @@ export default class App extends React.Component {
   }
 
   items() {
-    return this.state.fetchResponse.map(function(data, index){
-      return(
-        <View key={index} style={styles.itemContainer}>
-          <Text style={styles.item}>{data}</Text>
-        </View>
-      );
-    });
+    if (this.state.fetched) {
+      console.log(this.state.missingWeaponSkinsArray)
+      return this.state.missingWeaponSkinsArray.map(item => {
+        if (item.replace(new RegExp(` \\|(.*)`, "g"), "") === weapon) {
+            let skin = item.replace(new RegExp(`${weapon} \\| `, "g"), "");
+            if (skinsAPI[weapon][skin] !== undefined) {
+              let validImage = "";
+              if (skinsAPI[weapon][skin]["Factory New"]["image"] !== "Error") {
+                validImage = skinsAPI[weapon][skin]["Factory New"]["image"]
+              } else {
+                if (skinsAPI[weapon][skin]["Minimal Wear"]["image"] !== "Error") {
+                  validImage = skinsAPI[weapon][skin]["Minimal Wear"]["image"]
+                } else {
+                  if (skinsAPI[weapon][skin]["Field-Tested"]["image"] !== "Error") {
+                    validImage = skinsAPI[weapon][skin]["Field-Tested"]["image"]
+                  } else {
+                    if (skinsAPI[weapon][skin]["Well-Worn"]["image"] !== "Error") {
+                      validImage = skinsAPI[weapon][skin]["Well-Worn"]["image"]
+                    } else {
+                      validImage = skinsAPI[weapon][skin]["Battle-Scarred"]["image"]
+                    }
+                  }
+                }
+              }
+              // Add in return below : href={skinsAPI[weapon][skin]["Compare"]["buyLink"]} target="_blank" rel="noopener noreferrer"
+              return (
+                <View key={index} style={styles.itemContainer}>
+                  <Text style={styles.item}>{skin}</Text>
+                  <Image style={styles.logo} source={{uri: validImage}}/>
+                </View>
+              )
+            }
+            return null
+        } else {
+          return null
+        }
+      })
+    }
   }
 
   getJSON = async (profileURL) => {
@@ -84,12 +117,33 @@ export default class App extends React.Component {
           let vanillaName = item.rgDescriptions[items].market_hash_name
           ownedItems.push(vanillaName.replace(/\s(\(Minimal Wear\))|\s(\(Field-Tested\))|\s(\(Battle-Scarred\))|\s(\(Well-Worn\))|\s(\(Factory New\))|StatTrak™\s|★\s/g, ''))
         }
-        this.setState({
-          fetchResponse: ownedItems
-        });
         return ownedItems;
       })
     })
-    //this.getMissingSkins(ownedItems)
+    this.getMissingSkins(ownedItems)
+  }
+
+  getMissingSkins(ownedItems) {
+    let missingSkinsArray = [];
+    let itemsListFile = skinsList;
+    for(let i = 0; i < itemsListFile.length; i++) {
+      if(!(ownedItems.indexOf(itemsListFile[i]) >= 0)) {
+        missingSkinsArray.push(itemsListFile[i])
+      }
+    }
+    weaponList.forEach((weapon) => {
+      this.getMissingWeaponSkins(missingSkinsArray, weapon)
+    }, this);  
+  }
+
+  getMissingWeaponSkins(missingSkinsArray, weapon) {
+    for(let i = 0; i < missingSkinsArray.length; i++) {
+      if(missingSkinsArray[i].indexOf(weapon) >= 0) {    
+        this.state.missingWeaponSkinsArray.push(missingSkinsArray[i])      
+      }
+    }
+    this.setState({ 
+      fetched: true, 
+    });
   }
 }
