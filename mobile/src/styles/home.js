@@ -44,7 +44,7 @@ export default StyleSheet.create({
     },
     loadingIndicator: {
         paddingTop: vmin(3),
-        paddingBottom: vmin(10)
+        paddingBottom: vmin(3)
     },
     devContainer: {
         flexDirection: 'row',

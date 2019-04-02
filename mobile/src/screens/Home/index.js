@@ -1,6 +1,12 @@
 import React from 'react';
 import { View, Image, TextInput, ActivityIndicator, Clipboard, Keyboard, Text } from 'react-native';
 import Style from '../../styles/home'
+import skinsList from '../../databases/skinsList.json'
+
+let weaponList = ["AK-47", "AUG", "AWP", "Bayonet", "Bowie Knife", "Butterfly Knife", "CZ75-Auto", "Desert Eagle", "Dual Berettas", 
+"Falchion Knife", "FAMAS", "Five-SeveN", "Flip Knife", "G3SG1", "Galil AR", "Glock-18", "Gut Knife", "Huntsman Knife", "Karambit", 
+"M249", "M4A1-S", "M4A4", "M9 Bayonet", "MAC-10", "MAG-7", "MP5-SD", "MP7", "MP9", "Navaja Knife", "Negev", "Nova", "P2000", "P250", "P90", "PP-Bizon", 
+"R8 Revolver", "Sawed-Off", "SCAR-20", "SG 553", "Shadow Daggers", "SSG 08", "Stiletto Knife", "Talon Knife", "Tec-9", "UMP-45", "Ursus Knife", "USP-S", "XM1014"];
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -8,7 +14,9 @@ export default class Home extends React.Component {
         this.state = {
             input: '',
             fetching: false,
-            loadingPhase: ''
+            loadingPhase: '',
+            loadingPhaseString: '',
+            missingWeaponSkinsArray: []
         }
     }
   
@@ -60,6 +68,7 @@ export default class Home extends React.Component {
                     <Text style={Style.loadingText}>Loading, please wait...</Text>
                     <ActivityIndicator style={Style.loadingIndicator} size="large" color='#0ae'/>
                     <Text style={Style.loadingText}>{this.state.loadingPhase}</Text>
+                    <Text style={Style.loadingText}>{this.state.loadingPhaseString}</Text>
                 </View>
             )
         }
@@ -68,7 +77,8 @@ export default class Home extends React.Component {
     getJSON = async () => {
         this.setState({
             fetching: true,
-            loadingPhase: 'Fetching your Steam inventory'
+            loadingPhase: '1/3',
+            loadingPhaseString: 'Fetching your Steam inventory'
         });
         const lastChar = this.state.input.substr(this.state.input.length - 1);
         let URL;
@@ -95,7 +105,8 @@ export default class Home extends React.Component {
 
     getOwnedItems(json) {
         this.setState({
-            loadingPhase: 'Arraying your owned items'
+            loadingPhase: '2/3',
+            loadingPhaseString: 'Arraying your owned items'
         });
         let myJSON = [];
         myJSON.push(json);
@@ -109,6 +120,27 @@ export default class Home extends React.Component {
                 return ownedItems;
             })
         })
-        //this.getMissingSkins(ownedItems)
+        this.getMissingSkins(ownedItems)
+    }
+
+    getMissingSkins(ownedItems) {
+        this.setState({
+            loadingPhase: '3/3',
+            loadingPhaseString: 'Searching missing skins'
+        });
+        let missingSkinsArray = [];
+        let itemsListFile = skinsList;
+        for(let i = 0; i < itemsListFile.length; i++) {
+            if(!(ownedItems.indexOf(itemsListFile[i]) >= 0)) {
+                missingSkinsArray.push(itemsListFile[i])
+            }
+        }
+        weaponList.forEach((weapon) => {
+            for(let i = 0; i < missingSkinsArray.length; i++) {
+                if(missingSkinsArray[i].indexOf(weapon) >= 0) {    
+                  this.state.missingWeaponSkinsArray.push(missingSkinsArray[i])      
+                }
+            }
+        }, this);
     }
 }
