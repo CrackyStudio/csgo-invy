@@ -35,6 +35,17 @@ export default StyleSheet.create({
         paddingLeft: 10,
         paddingRight: 10,
     },
+    loadingContainer: {
+        paddingTop: vmin(10),
+        alignItems: 'center'
+    },
+    loadingText: {
+        color: 'white'
+    },
+    loadingIndicator: {
+        paddingTop: vmin(3),
+        paddingBottom: vmin(10)
+    },
     devContainer: {
         flexDirection: 'row',
         height: vmin(10),
