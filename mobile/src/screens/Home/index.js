@@ -21,34 +21,34 @@ export default class Home extends React.Component {
     }
   
     render() {
-      return (
-        <View style={Style.container}>
-            <View style={Style.logoContainer}>
-                <Image style={Style.logo} source={require('../../images/CS-icon.png')}/>
-            </View>
-            <View style={Style.mainContainer}>
-                <TextInput
-                    style={Style.input}
-                    textAlign={'center'}
-                    onChangeText={(input) => this.setState({input})}
-                    value={this.state.input}
-                    placeholder='Click to paste Steam URL'
-                    placeholderTextColor='white'
-                    onFocus={() => this.clipboardToInput()}
-                    selection={{start:0, end:0}} 
-                />
-                {this.loading()}
-            </View>
-            <View style={Style.devContainer}>
-                <View style={Style.devName}>
-                    <Text style={Style.name}>Cracky Studio</Text>
+        return (
+            <View style={Style.container}>
+                <View style={Style.logoContainer}>
+                    <Image style={Style.logo} source={require('../../images/CS-icon.png')}/>
                 </View>
-                <View style={Style.devVersion}>
-                    <Text style={Style.version}>v1.0.0</Text>
+                <View style={Style.mainContainer}>
+                    <TextInput
+                        style={Style.input}
+                        textAlign={'center'}
+                        onChangeText={(input) => this.setState({input})}
+                        value={this.state.input}
+                        placeholder='Click to paste Steam URL'
+                        placeholderTextColor='white'
+                        onFocus={() => this.clipboardToInput()}
+                        selection={{start:0, end:0}} 
+                    />
+                    {this.loading()}
                 </View>
-            </View>            
-        </View>
-      );
+                <View style={Style.devContainer}>
+                    <View style={Style.devName}>
+                        <Text style={Style.name}>Cracky Studio</Text>
+                    </View>
+                    <View style={Style.devVersion}>
+                        <Text style={Style.version}>v1.0.0</Text>
+                    </View>
+                </View>            
+            </View>
+        );
     }
 
     clipboardToInput = async () => {
@@ -142,5 +142,6 @@ export default class Home extends React.Component {
                 }
             }
         }, this);
+        this.props.navigation.navigate('Weapons', this.state.missingWeaponSkinsArray)
     }
 }
