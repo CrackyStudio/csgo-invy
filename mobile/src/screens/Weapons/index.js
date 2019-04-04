@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import Style from '../../styles/weapons'
 
 let weaponList = ["AK-47", "AUG", "AWP", "Bayonet", "Bowie Knife", "Butterfly Knife", "CZ75-Auto", "Desert Eagle", "Dual Berettas", 
@@ -14,7 +14,7 @@ export default class Home extends React.Component {
             missingWeaponSkinsArray: this.props.navigation.state.params
         }
     }
-  
+    
     render() {
         return (
             <View style={Style.container}>
@@ -28,7 +28,10 @@ export default class Home extends React.Component {
     buildWeaponList() {
         return weaponList.map(weapon => (
             <View key={weapon} style={Style.weaponContainer}>
-                <Text style={Style.Text}>{weapon}</Text>
+                <TouchableOpacity style={Style.dataView} onPress={() => this.props.navigation.navigate('Skins', 
+                { weaponName: weapon, missingWeaponSkinsArray: this.state.missingWeaponSkinsArray })}>
+                    <Text style={Style.Text}>{weapon}</Text>
+                </TouchableOpacity>
             </View>
         ));
     }

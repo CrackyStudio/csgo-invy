@@ -1,6 +1,7 @@
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import Home from './src/screens/Home'
 import Weapons from './src/screens/Weapons'
+import Skins from './src/screens/Skins'
 
 const AppNavigator = createStackNavigator({
   Home: {
@@ -8,10 +9,13 @@ const AppNavigator = createStackNavigator({
   },
   Weapons: {
     screen: Weapons
+  },
+  Skins: {
+    screen: Skins
   }
 },
 {
-  initialRouteName: 'Weapons',
+  initialRouteName: 'Home',
   headerMode: 'none'
 });
 

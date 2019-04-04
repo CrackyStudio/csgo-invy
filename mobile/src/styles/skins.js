@@ -8,26 +8,27 @@ export default StyleSheet.create({
         paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight,
     },
     mainContainer: {
-        flexDirection: 'row',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        flexWrap: 'wrap'
     },
-    weaponContainer: {
-        margin: vmin(2),
-        borderRadius: 4,
-        borderWidth: 1,
-        borderColor: '#0ae',
-        width: vmin(40),
-        height: vmin(10),
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    dataView: {
+    skinContainer: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: vmin(100)
+        borderRadius: 4,
+        borderWidth: 0.5,
+        borderColor: 'white',
+        padding: vmin(2),
+        margin: vmin(4),
+        width: vmin(80),
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    Image: {
+        marginTop: vmin(2.5),
+        marginBottom: vmin(2.5),
+        marginLeft: vmin(3.5),
+        width: vmin(50),
+        height: vmin(50),
     },
     Text: {
         color: 'white'

@@ -5,7 +5,7 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: '#1F1F1F',
+        backgroundColor: '#1B2936',
         paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight,
         alignItems: 'center'
     },
