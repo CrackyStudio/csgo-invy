@@ -16,7 +16,8 @@ export default class Home extends React.Component {
             fetching: false,
             loadingPhase: '',
             loadingPhaseString: '',
-            missingWeaponSkinsArray: []
+            missingWeaponSkinsArray: [],
+            firstLaunch: true,
         }
     }
   
@@ -142,6 +143,21 @@ export default class Home extends React.Component {
                 }
             }
         }, this);
+        this.setState({
+            firstLaunch: false
+        });
         this.props.navigation.navigate('Weapons', this.state.missingWeaponSkinsArray)
+        this.clearState()
+    }
+
+    clearState() {
+        this.setState({
+            input: '',
+            fetching: false,
+            loadingPhase: '',
+            loadingPhaseString: '',
+            missingWeaponSkinsArray: [],
+            firstLaunch: true, 
+        });
     }
 }

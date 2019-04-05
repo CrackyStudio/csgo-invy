@@ -15,8 +15,8 @@ export default StyleSheet.create({
     skinContainer: {
         flex: 1,
         borderRadius: 4,
-        borderWidth: 0.5,
-        borderColor: 'white',
+        borderWidth: 1,
+        borderColor: '#0ae',
         padding: vmin(2),
         margin: vmin(4),
         width: vmin(80),
