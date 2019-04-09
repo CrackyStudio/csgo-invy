@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, Button, Linking } from 'react-native';
+import { View, Text, Image, ScrollView, Button, Linking, ActivityIndicator } from 'react-native';
 import Style from '../../styles/skins'
 import skinsAPI from '../../databases/skins.json'
 
@@ -8,7 +8,8 @@ export default class Home extends React.Component {
         super(props);
         this.state = {
             weapon: this.props.navigation.state.params.weaponName,
-            missingWeaponSkinsArray: this.props.navigation.state.params.missingWeaponSkinsArray
+            missingWeaponSkinsArray: this.props.navigation.state.params.missingWeaponSkinsArray,
+            loaded: false
         }
     }
     
@@ -51,8 +52,9 @@ export default class Home extends React.Component {
                 return (
                     <View key={index} style={Style.skinContainer}>
                         <Text style={Style.Text}>{skin}</Text>
-                        <Image style={Style.Image} source={{uri: validImage}}/>
-                        <Button title="Buy" onPress={ ()=>{ Linking.openURL(skinsAPI[weapon][skin]["Compare"]["buyLink"])}} />
+                        <Image style={this.state.loaded ? Style.Image : {display: 'none'}} source={{uri: validImage}} onLoad={() => this.setState({loaded: true})}/>
+                        <ActivityIndicator style={this.state.loaded ? {display: 'none'} : Style.loadingIndicator} size="large" color='#0ae'/>
+                        <Button title="Buy" onPress={()=>{ Linking.openURL(skinsAPI[weapon][skin]["Compare"]["buyLink"])}}/>
                     </View>
                 )}
             } else {

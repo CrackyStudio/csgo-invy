@@ -18,6 +18,7 @@ export default class Home extends React.Component {
             loadingPhaseString: '',
             missingWeaponSkinsArray: [],
             firstLaunch: true,
+            isError: "none",
         }
     }
   
@@ -39,6 +40,7 @@ export default class Home extends React.Component {
                         selection={{start:0, end:0}} 
                     />
                     {this.loading()}
+                    {this.badURL()}
                 </View>
                 <View style={Style.devContainer}>
                     <View style={Style.devName}>
@@ -79,7 +81,8 @@ export default class Home extends React.Component {
         this.setState({
             fetching: true,
             loadingPhase: '1/3',
-            loadingPhaseString: 'Fetching your Steam inventory'
+            loadingPhaseString: 'Fetching your Steam inventory',
+            isError: "none"
         });
         const lastChar = this.state.input.substr(this.state.input.length - 1);
         let URL;
@@ -99,8 +102,8 @@ export default class Home extends React.Component {
                 });
             let responseJson = await response.json();
             this.getOwnedItems(responseJson);
-        } catch (error) {
-            console.error(error);
+        } catch {
+            this.clearState("badURL");
         }
     }
 
@@ -147,10 +150,10 @@ export default class Home extends React.Component {
             firstLaunch: false
         });
         this.props.navigation.navigate('Weapons', this.state.missingWeaponSkinsArray)
-        this.clearState()
+        this.clearState("none")
     }
 
-    clearState() {
+    clearState(isError) {
         this.setState({
             input: '',
             fetching: false,
@@ -158,6 +161,17 @@ export default class Home extends React.Component {
             loadingPhaseString: '',
             missingWeaponSkinsArray: [],
             firstLaunch: true, 
+            isError,
         });
+    }
+
+    badURL() {
+        if (this.state.isError == "badURL") {
+            return(
+                <View style={Style.loadingContainer}>
+                    <Text style={Style.errorText}>Bad URL, please verify your Steam URL.</Text>
+                </View>
+            )
+        }
     }
 }

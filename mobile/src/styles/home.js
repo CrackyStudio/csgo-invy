@@ -46,6 +46,9 @@ export default StyleSheet.create({
         paddingTop: vmin(3),
         paddingBottom: vmin(3)
     },
+    errorText: {
+        color: 'red'
+    },
     devContainer: {
         flexDirection: 'row',
         height: vmin(10),
