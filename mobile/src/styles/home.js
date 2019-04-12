@@ -49,6 +49,22 @@ export default StyleSheet.create({
     errorText: {
         color: 'red'
     },
+    buttonsContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        width: vmin(100),
+        marginTop: vmin(4)
+    },
+    leftButtonContainer: {
+        width: vmin(15),
+        height: vmin(10),
+        marginRight: vmin(2)
+    },
+    rightButtonContainer: {
+        width: vmin(15),
+        height: vmin(10),
+        marginLeft: vmin(2)
+    },
     devContainer: {
         flexDirection: 'row',
         height: vmin(10),

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, TextInput, ActivityIndicator, Clipboard, Keyboard, Text } from 'react-native';
+import { View, Image, TextInput, ActivityIndicator, Clipboard, Keyboard, Text, AsyncStorage, Button } from 'react-native';
 import Style from '../../styles/home'
 import skinsList from '../../databases/skinsList.json'
 
@@ -19,9 +19,11 @@ export default class Home extends React.Component {
             missingWeaponSkinsArray: [],
             firstLaunch: true,
             isError: "none",
+            previousUser: null,
         }
+        this.restoreData()
     }
-  
+    
     render() {
         return (
             <View style={Style.container}>
@@ -29,16 +31,7 @@ export default class Home extends React.Component {
                     <Image style={Style.logo} source={require('../../images/CS-icon.png')}/>
                 </View>
                 <View style={Style.mainContainer}>
-                    <TextInput
-                        style={Style.input}
-                        textAlign={'center'}
-                        onChangeText={(input) => this.setState({input})}
-                        value={this.state.input}
-                        placeholder='Click to paste Steam URL'
-                        placeholderTextColor='white'
-                        onFocus={() => this.clipboardToInput()}
-                        selection={{start:0, end:0}} 
-                    />
+                    {this.getPreviousUser()}
                     {this.loading()}
                     {this.badURL()}
                 </View>
@@ -87,9 +80,9 @@ export default class Home extends React.Component {
         const lastChar = this.state.input.substr(this.state.input.length - 1);
         let URL;
         if (lastChar != '/') {
-            URL = `https://steamcommunity.com/${this.state.input}/inventory/json/730/2`;
+            URL = `https://steamcommunity.com/${this.state.input.replace(/ /g,'')}/inventory/json/730/2`;
         } else {
-            URL = `https://steamcommunity.com/${this.state.input}inventory/json/730/2`;
+            URL = `https://steamcommunity.com/${this.state.input.replace(/ /g,'')}inventory/json/730/2`;
         }
         try {
             let response = await fetch(
@@ -101,6 +94,7 @@ export default class Home extends React.Component {
                 method: "GET",
                 });
             let responseJson = await response.json();
+            this.storeData(URL)
             this.getOwnedItems(responseJson);
         } catch {
             this.clearState("badURL");
@@ -171,6 +165,73 @@ export default class Home extends React.Component {
                 <View style={Style.loadingContainer}>
                     <Text style={Style.errorText}>Bad URL, please verify your Steam URL.</Text>
                 </View>
+            )
+        }
+    }
+
+    storeData = async (user) => {
+        try {
+            await AsyncStorage.setItem('previousUser', user);
+            this.setState({
+                previousUser: user 
+            });
+        } catch (error) {
+            throw error
+        }
+    }
+    
+    restoreData = async () => {
+        try {
+            const user = await AsyncStorage.getItem('previousUser');
+            if (user !== null) {
+                this.setState({
+                    previousUser: user 
+                });
+            }
+        } catch (error) {
+            throw error
+        }
+    }
+
+    getPreviousUser() {
+        if (this.state.previousUser !== null) {
+            return(
+                <View style={Style.loadingContainer}>
+                    <Text style={Style.loadingText}>Fetch last account fetched?</Text>
+                    <View style={Style.buttonsContainer}>
+                        <View style={Style.leftButtonContainer}>
+                            <Button title="Yes" onPress={()=>{
+                                    console.log("test")
+                                    console.log(this.state.input)
+                                    this.setState({
+                                        input: this.state.previousUser.replace(/https:\/\/steamcommunity.com\//g,'')
+                                    });
+                                    console.log(this.state.input)
+                                    this.getJSON();
+                                }}/>
+                        </View>
+                        <View style={Style.rightButtonContainer}>
+                            <Button title="No" color="#EC4C47" onPress={()=>{
+                                    this.setState({
+                                        previousUser: null 
+                                    });
+                                }}/>
+                        </View>
+                    </View>
+                </View>
+            )
+        } else {
+            return(
+                <TextInput
+                    style={Style.input}
+                    textAlign={'center'}
+                    onChangeText={(input) => this.setState({input})}
+                    value={this.state.input}
+                    placeholder='Click to paste Steam URL'
+                    placeholderTextColor='white'
+                    onFocus={() => this.clipboardToInput()}
+                    selection={{start:0, end:0}} 
+                />
             )
         }
     }
