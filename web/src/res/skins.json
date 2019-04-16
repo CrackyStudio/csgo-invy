@@ -1,5 +1,30 @@
 {
     "AK-47": {
+        "Uncharted": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Uncharted%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Uncharted%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Uncharted%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Uncharted%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV092sgIWIqPv9NLPFqWdQ-sJ0xLqXrYis2Fa1_BE_Y2iidYOTdg43ZlHSq1m3x-y705O_uJ7Lynowv3M8pSGK7lPtmXQ/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Uncharted%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Uncharted&category_730_Weapon%5B%5D=tag_weapon_ak47&appid=730"
+            }
+        },
         "Neon Rider": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJegJM6dO4q5KCk_LmDLbUkmJE5YshjL2W8NWn3Qy1_0FoMTryLNSQewE9MFDX8wTvlee-0MC67cuayCFnpGB8srRZP464/360fx360f",
@@ -677,6 +702,31 @@
         }
     },
     "AUG": {
+        "Momentum": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AUG%20%7C%20Momentum%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AUG%20%7C%20Momentum%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AUG%20%7C%20Momentum%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AUG%20%7C%20Momentum%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot6-iFAR17PLddgJP49GzmpSemsj4OrzZglRd6dd2j6eQ89-j2AfjqBY_ZGn0dY-QdQE2ZF7S_we-xbzsgpK87s_My3pl7iEk-z-DyMyvwAZv/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AUG%20%7C%20Momentum%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Momentum&category_730_Weapon%5B%5D=tag_weapon_aug&appid=730"
+            }
+        },
         "Chameleon": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot6-iFAR17PLddgJB5N27kYyOmPn1OqnUqWZU7Mxkh6eX99-ljVCx-hc4MGj7cISQelNsN13VqAPsl7q5hMe9v5WfzHAyvXQh-z-DyCf7NJoR/360fx360f",
@@ -1179,6 +1229,31 @@
         }
     },
     "AWP": {
+        "Atheris": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AWP%20%7C%20Atheris%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AWP%20%7C%20Atheris%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AWP%20%7C%20Atheris%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AWP%20%7C%20Atheris%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17PLfYQJU5cyzhr-HnvD8J4Tdl3lW7YsjjuyWoNil0FXjqEZlZmryJtKQegQ-Yg7V-QK5wr_s1Je06syYzSNgpGB8shyWYXeM/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/AWP%20%7C%20Atheris%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Atheris&category_730_Weapon%5B%5D=undefined&appid=730"
+            }
+        },
         "PAW": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAZt7PLfYQJS7cumlZe0mvLwOq7c2D5S7sEmib2Z9o-jjQTj80RtZWzxJtfEIQ4_NQvQ8lbrwbi70ZXv6JXXiSw0mNpOTU8/360fx360f",
@@ -3714,6 +3789,31 @@
         }
     },
     "Desert Eagle": {
+        "Light Rail": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/DesertEagle%20%7C%20Light%20Rail%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/DesertEagle%20%7C%20Light%20Rail%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/DesertEagle%20%7C%20Light%20Rail%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/DesertEagle%20%7C%20Light%20Rail%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PTbTjlH7du6kb-Oj_jLP7LWnn9u5MRjjeyPrY7xiw3nrUI-Z2ymctTEcw45ZlzY-le7lbu505-6u8icn3o1uHYgsWGdwUIySWubDg/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/DesertEagle%20%7C%20Light%20Rail%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Light%20Rail&category_730_Weapon%5B%5D=tag_weapon_deagle&appid=730"
+            }
+        },
         "Code Red": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PTbTjlH7du6kb-KkPDmNqjCmXlu5cB1g_zMu92ljFDj-kZsYzugI4OcegA_YwvS8gS7wby9g8fvvMjJznRm7yYnt3jD30vgHEZjJVE/360fx360f",
@@ -5245,6 +5345,31 @@
         }
     },
     "FAMAS": {
+        "Crypsis": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/FAMAS%20%7C%20Crypsis%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/FAMAS%20%7C%20Crypsis%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/FAMAS%20%7C%20Crypsis%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/FAMAS%20%7C%20Crypsis%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLuoKhRfwOP3dzxP7c-Jk4iEhOPLOrXCk2hF-_p9g-7J4bP5iUazrl1rYW6gI9LHcVA4NQ7UqwDrybzpjJTqupTPzyYx6yQk5S6OzkPlgR8acKUx0of5JTFn/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/FAMAS%20%7C%20Crypsis%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Crypsis&category_730_Weapon%5B%5D=tag_weapon_famas&appid=730"
+            }
+        },
         "Roll Cage": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLuoKhRf1OD3dzxP7c-JhoGHm-7LPr7Vn35cpsRw3bySrYr03wLsqkE_MTzyLdWdclA9ZlqF_QDowL290JG-7s_IyHV9-n51iAGw7_U/360fx360f",
@@ -5697,6 +5822,31 @@
         }
     },
     "Five-SeveN": {
+        "Angry Mob": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/Five-SeveN%20%7C%20Angry%20Mob%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/Five-SeveN%20%7C%20Angry%20Mob%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/Five-SeveN%20%7C%20Angry%20Mob%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/Five-SeveN%20%7C%20Angry%20Mob%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLOzLhRlxfbGTj5X09q_goW0hPLiNrXul2VW-txOhuDG_ZjKhFWmrBZyZm36LIDAegA_ZlCF-lW4w7rsgcDpu5WbzyBkuCYg7H3VnhayhRkaa_sv26KGUuZy7w/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/Five-SeveN%20%7C%20Angry%20Mob%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Angry%20Mob&category_730_Weapon%5B%5D=tag_weapon_fiveseven&appid=730"
+            }
+        },
         "Monkey Business": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLOzLhRlxfbGTj5X09q_goWYkuHxPYTTl2VQ5sROh-zF_Jn4xlbkqURvZmiidYKRdAFoNVzR81bryLvmjZ7o6ZjAmyYw7CNw7SmLzRepwUYbn3RWfTI/360fx360f",
@@ -7353,6 +7503,31 @@
         }
     },
     "Galil AR": {
+        "Akoben": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/GalilAR%20%7C%20Akoben%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/GalilAR%20%7C%20Akoben%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/GalilAR%20%7C%20Akoben%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/GalilAR%20%7C%20Akoben%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbupIgthwczbYQJF7dC_mL-KnPj2NrXummJW4NFOhujT8om72wG18hZrMmmldY-RcVdtY1iE-wO_xeu7hpDu6p6dzSEw7CMhtizVmwv3308ApowVKw/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/GalilAR%20%7C%20Akoben%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Akoben&category_730_Weapon%5B%5D=tag_weapon_galilar&appid=730"
+            }
+        },
         "Chatterbox": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbupIgthwczLZAJF7dC_mL-KleX1ILLemFRc7cF4n-SPodvz2gzjrUE4ZWyld4_DdlBrNAyC_ge4xr_qhZO-7s_PwXRmsnJw7GGdwUI2M1HQMQ/360fx360f",
@@ -10867,6 +11042,31 @@
         }
     },
     "M4A4": {
+        "The Emperor": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/M4A4%20%7C%20The%20Emperor%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/M4A4%20%7C%20The%20Emperor%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/M4A4%20%7C%20The%20Emperor%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/M4A4%20%7C%20The%20Emperor%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhnwMzFJTwW09m7hIWZmOXLP7LWnn9u5MRjjeyPo933jQDs_kZlMWmiIdKQdVM-ZVnQ8ge2xui5gMXqu5jMnCFr63Nx7WGdwUKmIT3TEw/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/M4A4%20%7C%20The%20Emperor%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=The%20Emperor&category_730_Weapon%5B%5D=tag_weapon_m4a1&appid=730"
+            }
+        },
         "Howl": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwT09S5g4yCmfDLPr7Vn35cppYo0riZp4-t3Q2x_UVpYGr6LIXHJABrYVGB_QS5k72905S_75ycm3t9-n51e4WtYjg/360fx360f",
@@ -12046,6 +12246,31 @@
         }
     },
     "MAC-10": {
+        "Whitefish": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MAC-10%20%7C%20Whitefish%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MAC-10%20%7C%20Whitefish%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MAC-10%20%7C%20Whitefish%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MAC-10%20%7C%20Whitefish%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou7umeldf1OD3fDxBvYyJkomYn8j2MrLFqWdY781lteXA54vwxlex_xVrMmv7Jo-QewI4YQ7TqQS6xum90ZO4tZzJmyRl6HR05SzbykapwUYb2Zum6mQ/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MAC-10%20%7C%20Whitefish%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Whitefish&category_730_Weapon%5B%5D=tag_weapon_mac10&appid=730"
+            }
+        },
         "Neon Rider": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou7umeldf0Ob3fDxBvYyJmoWEmeX9N77DqWZU7Mxkh6fHotzw2AXs_RU4ZWnxI4KccAU-NAvS-Vm6xOzthpe1v8yazCRn6Cdw-z-DyILxPzLA/360fx360f",
@@ -13075,6 +13300,31 @@
         }
     },
     "MP5-SD": {
+        "Gauss": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MP5-SD%20%7C%20Gauss%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MP5-SD%20%7C%20Gauss%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MP5-SD%20%7C%20Gauss%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MP5-SD%20%7C%20Gauss%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6rwOANf1OD3fC0X_9iJlZOfhfj5Mq_YlVRd4cJ5ntbN9J7yjRqw_BI_MTjyJY7DcwVrZQrXqFHqyO_rg8Lo6MnKyyE1vSF2tHbfnhXjn1gSOZEV41Ti/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MP5-SD%20%7C%20Gauss%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Gauss&category_730_Weapon%5B%5D=tag_weapon_mp5sd&appid=730"
+            }
+        },
         "Lab Rats": {
             "Field-Tested": {
                 "image": "Error",
@@ -13152,6 +13402,31 @@
         }
     },
     "MP7": {
+        "Mischief": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MP7%20%7C%20Mischief%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6ryFAR17P7YJgJQ7d-9kZSOkuXLP7LWnn9u5MRjjeyP942gigfi_0I-ZDvwJI_GJlI_ZwzZrFS6l73t18W-v57InHVgsikg7GGdwUK3QL_u2w/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MP7%20%7C%20Mischief%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MP7%20%7C%20Mischief%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MP7%20%7C%20Mischief%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/MP7%20%7C%20Mischief%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Mischief&category_730_Weapon%5B%5D=tag_weapon_mp7&appid=730"
+            }
+        },
         "Bloodsport": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6ryFABz7P7YJgJA4NO5kJObmOXgDLbUkmJE5YsijLnCrNz03gGx-hBqajigcoKXdlU2ZQmD_gK5xr26jJS17pvMwHBipGB8suhbuX9q/360fx360f",
@@ -15889,6 +16164,31 @@
         }
     },
     "P250": {
+        "Verdigris": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/P250%20%7C%20Verdigris%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/P250%20%7C%20Verdigris%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/P250%20%7C%20Verdigris%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/P250%20%7C%20Verdigris%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhhwszYI2gS08qzhoSCkOX9IITdn2xZ_Pp9i_vG8MKm3w2w-ko9NWnwLISUc1VvYgqG_QW8wb3r1pG5u5_PnHsx7yMk7XrbgVXp1iWxgADI/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/P250%20%7C%20Verdigris%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Verdigris&category_730_Weapon%5B%5D=tag_weapon_p250&appid=730"
+            }
+        },
         "See Ya Later": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhjxszYI2gS09-vloWZlOX7MITck29Y_cg_3r2QpY2n0QWx_BU4aj_6ctTAJgE4aF7W-FC4lLq7hZO1vMnLznFhvj5iuyjLh3IIBg/360fx360f",
@@ -16591,6 +16891,31 @@
         }
     },
     "P90": {
+        "Off World": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/P90%20%7C%20Off%20World%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/P90%20%7C%20Off%20World%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/P90%20%7C%20Off%20World%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/P90%20%7C%20Off%20World%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopuP1FAR17OORIQJN6tqhm5KHk8j4OrzZglRd6dd2j6eVoIqkjFbhqUs-Z2r2IYGRJAI4Nw6Gr1a5yOjv0Z7p6p_AzHNq73Nz-z-DyOKXWLG1/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/P90%20%7C%20Off%20World%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Off%20World&category_730_Weapon%5B%5D=tag_weapon_p90&appid=730"
+            }
+        },
         "Asiimov": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopuP1FAR17OORIXBD_9W_mY-dqPrxN7LEmyUF7MEniOqXpY2hiwbs80s-Zjv1Jo-QcQM8NF_Z81Ltxr3qgJ_tuc6b1zI97XT1Ujq3/360fx360f",
@@ -17720,6 +18045,31 @@
         }
     },
     "R8 Revolver": {
+        "Skull Crusher": {
+            "Field-Tested": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopL-zJAt21uH3cih9_tmgm4ydkuXLPKvBhG5C-8pjteTE8YXghWu4qgE7Nnf2cNWTewJvZFrZqQLqk7y-05C6ucjAziRnvSAl5n3czkez1ElFO-I7m7XAHlXg5QHi/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/R8Revolver%20%7C%20Skull%20Crusher%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/R8Revolver%20%7C%20Skull%20Crusher%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/R8Revolver%20%7C%20Skull%20Crusher%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/R8Revolver%20%7C%20Skull%20Crusher%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/R8Revolver%20%7C%20Skull%20Crusher%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Skull%20Crusher&category_730_Weapon%5B%5D=tag_weapon_revolver&appid=730"
+            }
+        },
         "Fade": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopL-zJAt21uH3cDx96t2ykb-ZkuH7P63UhFRc7cF4n-SP9I-mjgHhqBI9MGnyJo6QI1dqYwzSqVftwr3vhZTt6JicmCc36CYg4WGdwUJ8sOVuBw/360fx360f",
@@ -20736,6 +21086,31 @@
         }
     },
     "Tec-9": {
+        "Bamboozle": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/Tec-9%20%7C%20Bamboozle%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/Tec-9%20%7C%20Bamboozle%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/Tec-9%20%7C%20Bamboozle%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/Tec-9%20%7C%20Bamboozle%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoor-mcjhjxszcdD4b0963mYKEmMj4OrzZglRd6dd2j6eToYit0QziqEdtNWr3INKdIQdraFnW_QC3wuu8gsS1vJnOzHU1siV3-z-DyEii9lU5/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/Tec-9%20%7C%20Bamboozle%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Bamboozle&category_730_Weapon%5B%5D=tag_weapon_tec9&appid=730"
+            }
+        },
         "Snek-9": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoor-mcjhjxszcdD4b08-4lYuOqPrxN7LEmyVX6Zwl3evC9tql2APt_hc9Yj2iJICWdQA4NArRqVbvk7vrgpG9tMuc1zI97bSQ0Tg_/360fx360f",
@@ -21363,6 +21738,31 @@
         }
     },
     "UMP-45": {
+        "Moonrise": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/UMP-45%20%7C%20Moonrise%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/UMP-45%20%7C%20Moonrise%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/UMP-45%20%7C%20Moonrise%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/UMP-45%20%7C%20Moonrise%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo7e1f1Jf0vL3ZDBSuImJmY-EmeX9IL7uhX5f-8BlteXI8oTht1i1uRQ5fW_wd9CXdQ9vZ16E81S5xOm5gcDp6sjNwHoxsikm7X_UmRO_iR9MZuZxxavJmvndWak/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/UMP-45%20%7C%20Moonrise%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Moonrise&category_730_Weapon%5B%5D=tag_weapon_ump45&appid=730"
+            }
+        },
         "Primal Saber": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo7e1f1Jf0Ob3ZDBSuImJhJKCmvb4ILrTk3lu5cB1g_zMu46jjAGy80c_ajqgd9OTdFRoZl_V_VG5xr_r1pO9vMvNyidhs3Rztn7D30vgvDNIovc/360fx360f",
@@ -22694,6 +23094,31 @@
         }
     },
     "XM1014": {
+        "Incinegator": {
+            "Field-Tested": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/XM1014%20%7C%20Incinegator%20%28Field-Tested%29"
+            },
+            "Minimal Wear": {
+                "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgporrf0e1Y07PDdTiVPvYznwL-CmfT9Pb7Dl39e-vp9g-7J4bP5iUazrl1rZW36coCRIFRoNAnU8wW4l-67jJO9v5_JnHIx7nQr7SvbzUDigRBEcKUx0pL3N0pS/360fx360f",
+                "buyLink": "https://steamcommunity.com/market/listings/730/XM1014%20%7C%20Incinegator%20%28Minimal%20Wear%29"
+            },
+            "Battle-Scarred": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/XM1014%20%7C%20Incinegator%20%28Battle-Scarred%29"
+            },
+            "Well-Worn": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/XM1014%20%7C%20Incinegator%20%28Well-Worn%29"
+            },
+            "Factory New": {
+                "image": "Error",
+                "buyLink": "https://steamcommunity.com/market/listings/730/XM1014%20%7C%20Incinegator%20%28Factory%20New%29"
+            },
+            "Compare": {
+                "buyLink": "https://steamcommunity.com/market/search?q=Incinegator&category_730_Weapon%5B%5D=tag_weapon_xm1014&appid=730"
+            }
+        },
         "Ziggy": {
             "Field-Tested": {
                 "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgporrf0e1Y07PLZTiVPvYznwL-RnvDzKoTQmGpD681oteTE8YXghRq3rhU-MWz1LIDAJFc8MFvT_QDtx7vogpG_7cvPyyBjuSN24nzbzhy0n1gSOc-qRS8d/360fx360f",

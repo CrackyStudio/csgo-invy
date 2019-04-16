@@ -94,7 +94,7 @@ export default class Home extends React.Component {
                 method: "GET",
                 });
             let responseJson = await response.json();
-            this.storeData(URL)
+            this.storeData(URL.replace(/\/inventory\/json\/730\/2/g, ''))
             this.getOwnedItems(responseJson);
         } catch {
             this.clearState("badURL");
@@ -193,6 +193,13 @@ export default class Home extends React.Component {
         }
     }
 
+    setPreviousUser = async () => {
+        await this.setState({
+            input: this.state.previousUser.replace(/https:\/\/steamcommunity.com\//g,'')
+        });
+        this.getJSON();
+    }
+
     getPreviousUser() {
         if (this.state.previousUser !== null) {
             return(
@@ -200,15 +207,7 @@ export default class Home extends React.Component {
                     <Text style={Style.loadingText}>Fetch last account fetched?</Text>
                     <View style={Style.buttonsContainer}>
                         <View style={Style.leftButtonContainer}>
-                            <Button title="Yes" onPress={()=>{
-                                    console.log("test")
-                                    console.log(this.state.input)
-                                    this.setState({
-                                        input: this.state.previousUser.replace(/https:\/\/steamcommunity.com\//g,'')
-                                    });
-                                    console.log(this.state.input)
-                                    this.getJSON();
-                                }}/>
+                            <Button title="Yes" onPress={()=>{this.setPreviousUser()}}/>
                         </View>
                         <View style={Style.rightButtonContainer}>
                             <Button title="No" color="#EC4C47" onPress={()=>{
