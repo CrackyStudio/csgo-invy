@@ -1,2 +1,2 @@
-# Currently in development
-Release is not available now. Stay tuned!
+# Download
+https://play.google.com/store/apps/details?id=com.crackystudio.csgoinvy
