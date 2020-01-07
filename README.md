@@ -1,7 +1,7 @@
 <h1>
                     Welcome to CSGO Invy!
                 </h1>
-                <p>I'm available <a href="https://crackystudio.xyz/" target="_blank" rel="noopener noreferrer">here</a></p>
+                <p>I'm no more longer available online, I'm sorry</p>
                 <p>
                     I'm a totally free web application. Released since November 7, 2018, I'm now available online and I no longer need 
                     to be installed.
