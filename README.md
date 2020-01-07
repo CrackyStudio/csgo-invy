@@ -3,8 +3,7 @@
                 </h1>
                 <p>I'm no more longer available online, I'm sorry</p>
                 <p>
-                    I'm a totally free web application. Released since November 7, 2018, I'm now available online and I no longer need 
-                    to be installed.
+                    I'm a totally free web application. Released since November 7, 2018.
                     <br/><br/>
                     Powered by Steam, I also use NodeJS and ReactJS to work. I use few packages like Evergreen (Segment) and forever, 
                     a simple CLI tool for ensuring that my script runs continuously. To grab your inventory data, I use cors-anywhere
@@ -32,8 +31,7 @@
                     Why helping my developer?
                 </strong>
                 <p>
-                    I'm free. But for my developer it's not. He has to pay the server powering me ($2,99/month) and also the domain name 
-                    associated with ($9,99/year). I'm also powerful and complete, and it took many hours to Cracky (the dev) to build me.
+                    It tooks many hours to Cracky (the dev) to build me.
                     <br/><br/>
                     You can donate <a href="https://www.paypal.me/officialcracky/" target="_blank" rel="noopener noreferrer">here</a>.
                     Or say thanks <a href="https://steamcommunity.com/id/crackystudio/" target="_blank" rel="noopener noreferrer">here</a> :)
