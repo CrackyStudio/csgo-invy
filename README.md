@@ -47,5 +47,5 @@ You can find somes bugs, feel free to report them, it helps me!
 | 07/11/2018 | NodeJS | No more longer supported |
 | 15/12/2018 | EJS | No more longer supported |
 | 17/01/2019 | ReactJS | No more longer available online |
-| 20/04/2019 | React Native (Android) | <a href="https://play.google.com/store/apps/details?id=com.crackystudio.csgoinvy&hl=fr" target="_blank" rel="noopener noreferrer">Available</a> |
+| 20/04/2019 | React Native (Android) | <a href="https://play.google.com/store/apps/details?id=com.crackystudio.csgoinvy&hl=fr" target="_blank" rel="noopener noreferrer">Available (but outdated)</a> |
 | xx/xx/xxxx | React Native (iOS) | Canceled (expensive license) |
