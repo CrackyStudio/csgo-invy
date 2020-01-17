@@ -38,8 +38,7 @@
                 </p>
                 
 # Notes
-Keep in mind that CSGO Invy is still under development.
-You can find somes bugs, feel free to report them, it helps me!
+Keep in mind that CSGO Invy is outdated and no more longer maintained.
 
 # Changelog
 | Release Date | Version | Status |
